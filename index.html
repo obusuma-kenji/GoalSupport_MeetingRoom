@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>資格・学び・経験を、人生の成果にする出版｜電子書籍出版・伴走サポート</title>
+    <title>資格・学び・経験を、人生の成果にする出版｜話すことから始める電子書籍出版サポート</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             background-color: var(--bg-light);
         }
 
-        /* ヘッダー・ヒーローセクション */
+        /* ヒーローセクション */
         .hero {
             background-color: var(--bg-cream);
             padding: 4rem 2rem 5rem;
@@ -59,7 +59,6 @@
             z-index: 0;
         }
         
-        /* 画像の上に非常に薄いオーバーレイ */
         .hero::after {
             content: '';
             position: absolute;
@@ -69,13 +68,6 @@
             bottom: 0;
             background: linear-gradient(135deg, rgba(250, 248, 245, 0.15) 0%, rgba(250, 248, 245, 0.25) 100%);
             z-index: 0;
-        }
-
-
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-30px) translateX(30px); }
         }
 
         .hero-content {
@@ -93,25 +85,14 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.8rem;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            animation: slideDown 0.8s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 15px rgba(107, 158, 120, 0.3);
         }
 
         .hero h1 {
@@ -119,7 +100,6 @@
             color: var(--text-dark);
             margin-bottom: 1.5rem;
             line-height: 1.4;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero-subtitle {
@@ -127,32 +107,19 @@
             color: var(--text-medium);
             margin-bottom: 2rem;
             font-family: 'Noto Serif JP', serif;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero-cta {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1.3rem 3.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 700;
             box-shadow: 0 10px 30px rgba(107, 158, 120, 0.3);
             transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease 0.6s both;
             margin-top: 1rem;
         }
 
@@ -165,7 +132,6 @@
             margin-top: 1.5rem;
             font-size: 0.95rem;
             color: var(--text-light);
-            animation: fadeInUp 0.8s ease 0.8s both;
         }
 
         /* コンテナ */
@@ -208,33 +174,12 @@
             margin-bottom: 3rem;
         }
 
-        /* 問題提起セクション */
-        .problem {
-            background: linear-gradient(180deg, #FFFFFF 0%, #F9F6F2 100%);
-            position: relative;
-            border-top: 1px solid rgba(107, 158, 120, 0.1);
-        }
-
-        /* 動画紹介セクション */
+        /* 動画セクション */
         .video-intro {
             background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
             padding: 4rem 0;
             text-align: center;
             position: relative;
-        }
-
-        .video-intro::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle, rgba(107, 158, 120, 0.03) 1px, transparent 1px);
-            background-size: 25px 25px;
-            opacity: 0.5;
-            pointer-events: none;
         }
 
         .video-container {
@@ -281,32 +226,53 @@
             font-style: italic;
         }
 
-        .problem::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle, rgba(232, 122, 93, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.5;
-            pointer-events: none;
+        /* 資産セクション */
+        .assets {
+            background: linear-gradient(180deg, #F9F6F2 0%, #FFFFFF 100%);
+            position: relative;
+        }
+
+        .assets-visual {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .assets-text {
+            max-width: 800px;
+            margin: 2rem auto;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .assets-highlight {
+            background: linear-gradient(transparent 60%, rgba(107, 158, 120, 0.2) 60%);
+            font-weight: 600;
+            padding: 0 4px;
+        }
+
+        /* 問題提起セクション */
+        .problem {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9F6F2 100%);
+            position: relative;
         }
 
         .problem-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .problem-box {
             background: var(--bg-cream);
             padding: 3rem;
             border-radius: 15px;
             border-left: 5px solid #E87A5D;
-            position: relative;
-            z-index: 1;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .problem-content p {
+        .problem-box p {
             font-size: 1.1rem;
             line-height: 2;
             color: var(--text-dark);
@@ -323,46 +289,21 @@
         .solution {
             background: linear-gradient(180deg, #F0F5F1 0%, #E8F0EA 100%);
             position: relative;
-            border-top: 1px solid rgba(107, 158, 120, 0.15);
         }
 
-        .solution::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle, rgba(107, 158, 120, 0.04) 1px, transparent 1px);
-            background-size: 25px 25px;
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        .consultation-image {
-            max-width: 600px;
+        .solution-intro {
+            max-width: 900px;
             margin: 0 auto 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
-        }
-
-        .consultation-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 2;
         }
 
         .solution-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
-            position: relative;
-            z-index: 1;
         }
 
         .solution-card {
@@ -381,15 +322,8 @@
         }
 
         .solution-icon {
-            width: 80px;
-            height: 80px;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-        }
-
-        .solution-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
         }
 
         .solution-card h3 {
@@ -403,83 +337,201 @@
             line-height: 1.9;
         }
 
-        /* 実績セクション */
-        .results {
+        /* 5つの要素セクション */
+        .five-elements {
             background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EC 100%);
-            position: relative;
-            border-top: 1px solid rgba(232, 197, 166, 0.2);
         }
 
-        .results::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle, rgba(232, 197, 166, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .results-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .results-visual {
-            max-width: 500px;
-            margin: 0 auto 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-
-        .results-visual img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .results-stat {
-            text-align: center;
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin: 3rem 0;
-            padding: 3rem;
-            background: linear-gradient(135deg, rgba(107, 158, 120, 0.05) 0%, rgba(232, 197, 166, 0.08) 100%);
-            border-radius: 15px;
         }
 
-        .results-stat-number {
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--primary);
-            line-height: 1;
+        .element-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .element-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .results-stat-label {
+        .element-card h4 {
             font-size: 1.3rem;
             color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .element-card p {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+
+        /* AIセクション */
+        .ai-section {
+            background: linear-gradient(180deg, #E8F0EA 0%, #F0F5F1 100%);
+        }
+
+        .ai-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ai-flow {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .ai-step {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .ai-step h4 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .ai-step p {
+            color: var(--text-medium);
+            line-height: 1.9;
+        }
+
+        /* 伴走サポートセクション */
+        .support {
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+        }
+
+        .support-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-tagline {
+            font-size: 1.5rem;
             font-weight: 600;
+            color: var(--primary);
+            margin: 2rem 0;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .support-description {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--text-dark);
+            margin: 2rem 0;
+        }
+
+        /* モニター実績セクション */
+        .monitors {
+            background: linear-gradient(180deg, #F9F6F2 0%, #F5F1EC 100%);
+        }
+
+        .monitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .monitor-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .monitor-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .monitor-status {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .monitor-description {
+            color: var(--text-medium);
+            line-height: 1.9;
+        }
+
+        /* プロフィールセクション */
+        .profile {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9F6F2 100%);
+        }
+
+        .profile-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .profile-text h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .profile-text h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
             margin-bottom: 1.5rem;
         }
 
-        .results-description {
-            font-size: 1.1rem;
+        .profile-text p {
             color: var(--text-medium);
-            line-height: 2;
-            margin-top: 2rem;
-            text-align: left;
+            line-height: 1.9;
+            margin-bottom: 1rem;
         }
 
-        .results-highlight {
-            background: linear-gradient(transparent 60%, rgba(107, 158, 120, 0.2) 60%);
-            font-weight: 600;
-            padding: 0 4px;
+        .profile-book {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-radius: 10px;
+        }
+
+        .profile-book strong {
+            color: var(--primary);
         }
 
         /* CTAセクション */
@@ -499,9 +551,8 @@
             right: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
             border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
         }
 
         .cta-section .section-title {
@@ -513,11 +564,11 @@
         }
 
         .cta-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .cta-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -528,6 +579,29 @@
             line-height: 2;
             margin: 2rem 0;
             color: rgba(255, 255, 255, 0.95);
+        }
+
+        .qr-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem auto;
+            max-width: 600px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 3px solid var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-medium);
         }
 
         .cta-button {
@@ -552,7 +626,7 @@
         .cta-note {
             margin-top: 2rem;
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         /* フッター */
@@ -581,10 +655,6 @@
 
         /* レスポンシブ */
         @media (max-width: 768px) {
-            .hero {
-                min-height: 60vh;
-            }
-
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -597,37 +667,26 @@
                 font-size: 1.8rem;
             }
 
-            .solution-cards {
+            .solution-cards, .elements-grid, .monitor-grid {
                 grid-template-columns: 1fr;
             }
 
-            .results-stat-number {
-                font-size: 4rem;
-            }
-
-            .hero-content {
-                padding: 2rem;
-            }
-
-            .problem-content {
-                padding: 2rem;
-            }
-
-            .consultation-image,
-            .results-visual {
-                max-width: 100%;
+            .profile-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
             .video-title {
                 font-size: 1.5rem;
             }
 
-            .video-wrapper {
-                padding: 1rem;
+            .qr-placeholder {
+                width: 200px;
+                height: 200px;
             }
         }
 
-        /* スクロールアニメーション用 */
+        /* アニメーション */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -670,22 +729,51 @@
         </div>
     </section>
 
+    <!-- あなたの中にある「資産」セクション -->
+    <section class="assets">
+        <div class="container">
+            <h2 class="section-title fade-in">あなたの中にある「資産」は、<br>眠っていませんか?</h2>
+            <div class="assets-text fade-in">
+                <p>
+                    あなたがこれまでに得た<span class="assets-highlight">「資格」</span>、深めてきた<span class="assets-highlight">「学び」</span>、そして積み重ねてきた<span class="assets-highlight">「経験」</span>。
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    これらはすべて、誰かの役に立つ価値ある財産です。しかし、形の無いまま眠らせていては、誰にも届きません。
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 問題提起セクション -->
     <section class="problem">
         <div class="container">
-            <h2 class="section-title fade-in">こんなお悩みはありませんか?</h2>
+            <h2 class="section-title fade-in">章立てまでは決まった。<br>でも、そこから手が止まってしまう。</h2>
             <p class="section-subtitle fade-in">電子書籍を書きたいと思っているあなたへ</p>
             
-            <div class="problem-content fade-in">
-                <p>
-                    電子書籍を書きたいと思い、章立てまでは決まったものの、<span class="problem-highlight">そこから文章量が増えず、手が止まってしまう</span>方が多くいます。
-                </p>
-                <p>
-                    AIを使って構成を作ってみたものの、形にはなっているのに、どこかしっくりこない。<span class="problem-highlight">「これは本当に自分の言葉なのか」と違和感を抱え、書き進められなくなってしまう</span>ケースも少なくありません。
-                </p>
-                <p>
-                    一人で考え続けるほど、何を書けばよいのか分からなくなってしまう、そんな状態で止まってしまう方が多く見られます。
-                </p>
+            <div class="problem-content">
+                <div class="problem-box fade-in">
+                    <p>
+                        「電子書籍を書きたい」という想いはある。構成も考えた。
+                    </p>
+                    <p>
+                        しかし、いざ書き始めると<span class="problem-highlight">文章量が増えず、止まってしまう</span>。
+                    </p>
+                    <p>
+                        <span class="problem-highlight">一人で考え続けるほど、何を書けばよいのか分からなくなってしまう</span>のです。
+                    </p>
+                </div>
+
+                <div class="problem-box fade-in" style="border-left-color: var(--primary);">
+                    <p>
+                        AIで構成は作れても、<span class="problem-highlight">「自分の言葉」ではない違和感</span>。
+                    </p>
+                    <p>
+                        形にはなっているのに、どこかしっくりこない。「これは本当に自分の言葉なのか?」
+                    </p>
+                    <p>
+                        AIを使って形にはなったものの、どこかしっくりこない。その違和感を抱えたままでは、自信を持って世に出すことはできません。
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -693,94 +781,198 @@
     <!-- 解決方法セクション -->
     <section class="solution">
         <div class="container">
-            <h2 class="section-title fade-in">私たちの解決方法</h2>
-            <p class="section-subtitle fade-in">話すことから始める、寄り添う伴走サポート</p>
-            
-            <div class="consultation-image fade-in">
-                <img src="consultation.png" alt="寄り添う相談風景">
+            <h2 class="section-title fade-in">無理に書こうとせず、<br>まずは「話すこと」から始める。</h2>
+            <p class="section-subtitle fade-in">話す言葉には、書く言葉にはない「勢い」と「真実」が宿ります</p>
+
+            <div class="solution-intro fade-in">
+                <p>
+                    文章が進まないときは、無理に文字数を増やそうとしてはいけません。<br>
+                    解決策は、キーボードを離れて、<strong>声に出して話すこと</strong>です。
+                </p>
             </div>
             
             <div class="solution-cards">
                 <div class="solution-card fade-in">
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
-                            <circle cx="75" cy="75" r="35" fill="#6B9E78" opacity="0.8"/>
-                            <circle cx="125" cy="75" r="35" fill="#6B9E78" opacity="0.8"/>
-                            <path d="M 60 60 Q 55 50, 65 48 Q 75 47, 80 55" fill="none" stroke="#4A7C59" stroke-width="3"/>
-                            <path d="M 110 60 Q 105 50, 115 48 Q 125 47, 130 55" fill="none" stroke="#4A7C59" stroke-width="3"/>
-                            <ellipse cx="65" cy="55" rx="8" ry="12" fill="#2C3E50"/>
-                            <ellipse cx="115" cy="55" rx="8" ry="12" fill="#2C3E50"/>
-                            <path d="M 50 100 Q 60 90, 70 95 L 80 100" fill="none" stroke="#6B9E78" stroke-width="2.5"/>
-                            <path d="M 100 100 Q 110 90, 120 95 L 130 100" fill="none" stroke="#6B9E78" stroke-width="2.5"/>
-                        </svg>
-                    </div>
-                    <h3>まずは話すことから</h3>
+                    <div class="solution-icon">💬</div>
+                    <h3>話すことで、<br>当時の「空気」と「感情」が蘇る</h3>
                     <p>
-                        文章が進まないときは、無理に文字数を増やすのではなく、まずは声に出して話すことから始めます。その時の出来事、周囲の様子、感情、当時どのように考えていたのか、今振り返るとどんな意味があるのかを整理します。
+                        その時の出来事、周囲の様子、感情、当時どのように考えていたのか。話すことで記憶が整理され、文字だけでは表現しきれない「行間」が生まれます。思考の蓋が開き、エピソードが鮮やかに蘇ります。
                     </p>
                 </div>
                 
                 <div class="solution-card fade-in">
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
-                            <circle cx="100" cy="75" r="50" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.3"/>
-                            <circle cx="100" cy="75" r="35" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.5"/>
-                            <circle cx="100" cy="75" r="20" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.7"/>
-                            <circle cx="100" cy="75" r="8" fill="#6B9E78"/>
-                            <path d="M 100 15 L 90 40 L 110 40 Z" fill="#4A7C59"/>
-                            <path d="M 100 20 L 100 70" stroke="#4A7C59" stroke-width="4"/>
-                        </svg>
-                    </div>
-                    <h3>書くポイントが見える</h3>
+                    <div class="solution-icon">🎯</div>
+                    <h3>「どこを膨らませればいいのか」が見えてくる</h3>
                     <p>
-                        話すことで「どこを書けばいいのか」「どこを膨らませればいいのか」というポイントが見えてきます。経験や感情そのものは人にしか語れません。あなたの意図を言葉にしていきます。
+                        話していくうちに、つい声が大きくなったり、言葉が溢れたりする箇所があります。そここそが、読者に伝えるべき重点ポイント。話すことで、読者に伝えるべき重要なポイントや、今の視点から振り返る意味が明確になります。
                     </p>
                 </div>
                 
                 <div class="solution-card fade-in">
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
-                            <rect x="50" y="40" width="100" height="70" rx="10" fill="#6B9E78" opacity="0.8"/>
-                            <circle cx="80" cy="60" r="8" fill="white"/>
-                            <circle cx="120" cy="60" r="8" fill="white"/>
-                            <rect x="70" y="85" width="60" height="3" fill="white" opacity="0.6"/>
-                            <rect x="70" y="93" width="60" height="3" fill="white" opacity="0.6"/>
-                            <circle cx="100" cy="30" r="4" fill="#6B9E78"/>
-                            <line x1="100" y1="30" x2="100" y2="40" stroke="#6B9E78" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>AIは補助として活用</h3>
+                    <div class="solution-icon">✨</div>
+                    <h3>経験や感情そのものは、<br>人にしか語れません</h3>
                     <p>
-                        AIは構成や下書きの補助として活用します。「ここはこう書きたい」「この時、こう感じた」という意図を言葉にしたうえでAIに伝え直し、ご本人の経験が反映された文章に整えていきます。
+                        あなたの「意図」を言葉にしていきます。経験や感情そのものは、AIには決して真似できない「あなただけにしか語れない」固有の財産。それが、読者の心に響く本物の言葉になります。
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 実績セクション -->
-    <section class="results">
+    <!-- 5つの要素セクション -->
+    <section class="five-elements">
         <div class="container">
-            <h2 class="section-title fade-in">現在の取り組み</h2>
-            <p class="section-subtitle fade-in">モニターの方々と進行中です</p>
-            
-            <div class="results-content">
-                <div class="results-visual fade-in">
-                    <img src="book_light.png" alt="本から溢れる光と言葉">
+            <h2 class="section-title fade-in">経験を言葉にするための<br>「5つの要素」</h2>
+            <p class="section-subtitle fade-in">この5つを意識して話すだけで、執筆のポイントが驚くほど明確になります</p>
+
+            <div class="elements-grid">
+                <div class="element-card fade-in">
+                    <div class="element-number">1</div>
+                    <h4>出来事</h4>
+                    <p>何が起きたのか</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">文章の骨組みとなる具体的な事実です。</p>
                 </div>
 
-                <div class="results-stat fade-in">
-                    <div class="results-stat-number">2名</div>
-                    <div class="results-stat-label">現在モニター伴走中</div>
+                <div class="element-card fade-in">
+                    <div class="element-number">2</div>
+                    <h4>周囲の様子</h4>
+                    <p>客観的な状況</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">情景や周りの反応を話すことで、読者に臨場感を与えます。</p>
                 </div>
-                
-                <div class="results-description fade-in">
-                    <p>
-                        現在、出版伴走サポートのモニターとして2名の方と進行中です。いずれも章立てが決まり、現在は原稿執筆段階にあり、いわゆる<span class="results-highlight">「産みの苦しみ」のフェーズを伴走</span>しています。
+
+                <div class="element-card fade-in">
+                    <div class="element-number">3</div>
+                    <h4>感情</h4>
+                    <p>どう感じたのか</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">その瞬間の素直な気持ちが、読者の共感を呼びます。</p>
+                </div>
+
+                <div class="element-card fade-in">
+                    <div class="element-number">4</div>
+                    <h4>当時の思考</h4>
+                    <p>どう考えたのか</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">どのような判断や葛藤があったのか。ここが読み応え(肉付け)になります。</p>
+                </div>
+
+                <div class="element-card fade-in">
+                    <div class="element-number">5</div>
+                    <h4>今の視点</h4>
+                    <p>振り返って気づく意味</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">現在のあなたがその経験をどう解釈しているか。これが読者への「学び」に変わります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIとの理想的な関係セクション -->
+    <section class="ai-section">
+        <div class="container">
+            <h2 class="section-title fade-in">AIは「主役」ではなく、<br>優秀な「補助」として使う。</h2>
+            <p class="section-subtitle fade-in">あなたの「意図」を主役に</p>
+
+            <div class="ai-content">
+                <div class="ai-flow fade-in">
+                    <div class="ai-step">
+                        <h4>1. 意図の言語化</h4>
+                        <p>
+                            録音して文字起こしした「生の声」を確認し、「ここはこう伝えたい」「この感情を大切にしたい」というあなたの意図を明確にします。
+                        </p>
+                    </div>
+
+                    <div class="ai-step">
+                        <h4>2. AIへの入力</h4>
+                        <p>
+                            整った文章を求めるのではなく、あなたの「生の言葉(文字起こしデータ)」をAIに渡し、「この内容をもとに、私の意図を汲み取って構成案や下書きを作って」と指示します。
+                        </p>
+                    </div>
+
+                    <div class="ai-step">
+                        <h4>3. 自分の言葉による調整</h4>
+                        <p>
+                            AIが作成した案を読み、改めてあなた自身の具体的なエピソードや感情を肉付けして仕上げます。「ここはこう書きたい」「この時、こう感じた」というあなたの意図を言葉にしたうえでAIに伝え直し、ご本人の経験が反映された文章に整えていきます。
+                        </p>
+                    </div>
+                </div>
+
+                <p class="solution-intro fade-in" style="margin-top: 3rem;">
+                    AIに頼る前に、まずは自分自身の意図を言葉にすること。<br>
+                    これが、あなたの言葉に魂を宿らせる唯一の方法です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 伴走サポートセクション -->
+    <section class="support">
+        <div class="container">
+            <h2 class="section-title fade-in">Shippori Mincho</h2>
+            <p class="support-tagline fade-in">寄り添う「伴走サポート」が、産みの苦しみを支えます。</p>
+
+            <div class="support-content fade-in">
+                <p class="support-description">
+                    執筆はいわゆる「産みの苦しみ」の連続です。私たちはただの編集者ではなく、<strong>あなたの言葉を引き出し、整理し、最後まで走り抜けるためのパートナー(伴走者)</strong>です。
+                </p>
+                <p class="support-description">
+                    孤独な作業を、対話のある創造的な時間に変えます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- モニター実績セクション -->
+    <section class="monitors">
+        <div class="container">
+            <h2 class="section-title fade-in">止まっていた筆が、<br>再び動き出す体験。</h2>
+            <p class="section-subtitle fade-in">現在のモニター実績</p>
+
+            <div class="monitor-grid">
+                <div class="monitor-card fade-in">
+                    <div class="monitor-label">Monitor A</div>
+                    <div class="monitor-status">✍️ Writing Resumed</div>
+                    <p class="monitor-description">
+                        章立てで停滞していた状態が、声に出して整理することで解消。執筆が再開しました。
                     </p>
-                    <p style="margin-top: 1.5rem;">
-                        <span class="results-highlight">声に出して話すことで気持ちが整理され、書くポイントが見えた</span>ことで、止まっていた筆が再び進み始める変化が起きています。
+                </div>
+
+                <div class="monitor-card fade-in">
+                    <div class="monitor-label">Monitor B</div>
+                    <div class="monitor-status">📝 Drafting in Progress</div>
+                    <p class="monitor-description">
+                        手が止まっていた執筆が、伴走によって再び動き始めました。現在は原稿執筆段階を伴走中です。
                     </p>
+                </div>
+            </div>
+
+            <p class="solution-intro fade-in" style="margin-top: 3rem; text-align: center;">
+                現在、モニターとして2名の方が進行中です。章立てが決まった後の執筆段階で伴走し、<br>
+                <strong>声に出して気持ちを整理することで、再び筆が進み始める変化</strong>が起きています。
+            </p>
+        </div>
+    </section>
+
+    <!-- プロフィールセクション -->
+    <section class="profile">
+        <div class="container">
+            <h2 class="section-title fade-in">経験を形にする<br>第一歩を、共に。</h2>
+            <p class="section-subtitle fade-in">代表・岸浩美(Hiromi Kishi)</p>
+
+            <div class="profile-content fade-in">
+                <div class="profile-image">
+                    <div style="width: 300px; height: 400px; background: linear-gradient(135deg, var(--bg-cream) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; color: var(--text-medium);">
+                        [岸様のお写真]
+                    </div>
+                </div>
+
+                <div class="profile-text">
+                    <h3>代表・岸 浩美(Hiromi Kishi)</h3>
+                    <h4>一般社団法人 心支歩 / ゴールサポート会議室</h4>
+
+                    <div class="profile-book">
+                        <p><strong>著書:</strong> 『どうする?』</p>
+                        <p style="margin-top: 1rem;">
+                            私自身も言葉を紡ぐ苦しみと喜びを知っています。あなたの経験を誰かの道しるべにするために、全力でサポートします。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -790,17 +982,27 @@
     <section id="cta" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="section-title">まずはLINEでご相談ください</h2>
+                <h2 class="section-title">まずはLINEで、お話ししてみませんか?</h2>
                 <p class="section-subtitle">あなたの想いを、形にするお手伝いをします</p>
                 
                 <p class="cta-description">
-                    あなたの資格・学び・経験は、誰かの役に立つ価値ある財産です。<br>
-                    その想いを電子書籍という形にするお手伝いをさせてください。
+                    電子書籍という形で、想いを未来へ届けませんか?<br>
+                    あなたの資格・学び・経験は、誰かの役に立つために待っています。
                 </p>
+
+                <div class="qr-section">
+                    <h3 style="color: var(--text-dark); margin-bottom: 1.5rem;">初回相談は無料です。</h3>
+                    <div class="qr-placeholder">
+                        LINE QRコード<br>
+                        (実際のQRコードを<br>ここに配置)
+                    </div>
+                    <p style="color: var(--text-medium); margin-bottom: 1rem;">あなたの想いを、形にするお手伝いをします。</p>
+                    <p style="color: var(--text-medium);">お気軽にお問い合わせください。</p>
+                </div>
                 
                 <a href="https://line.me/R/ti/p/@your-line-id" class="cta-button">📱 LINEで相談する</a>
                 
-                <p class="cta-note">※ お気軽にお問い合わせください。初回相談は無料です。</p>
+                <p class="cta-note">※ まずはお気軽にご相談ください。</p>
             </div>
         </div>
     </section>
@@ -811,7 +1013,7 @@
             <div class="footer-info">
                 <p><strong>運営:</strong> 一般社団法人 心支歩</p>
                 <p><strong>販売:</strong> ゴールサポート会議室</p>
-                <p><strong>代表:</strong> 岸 浩美</p>
+                <p><strong>代表:</strong> 岸 浩美(Hiromi Kishi)</p>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2025 一般社団法人 心支歩 / ゴールサポート会議室. All rights reserved.</p>
@@ -821,15 +1023,6 @@
 
     <!-- スクロールアニメーション -->
     <script>
-        // 画像をBase64で読み込む
-        const images = {
-            'hero_study.png': 'hero_study.png',
-            'pattern_bg.png': 'pattern_bg.png',
-            'consultation.png': 'consultation.png',
-            'book_light.png': 'book_light.png'
-        };
-
-        // スクロールアニメーション
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -847,7 +1040,6 @@
             observer.observe(el);
         });
 
-        // スムーズスクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
