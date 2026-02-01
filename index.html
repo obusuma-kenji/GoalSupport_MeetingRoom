@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資格・学び・経験を、人生の成果にする出版｜電子書籍出版・伴走サポート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6B9E78;
+            --secondary: #8BB19A;
+            --accent: #E8C5A6;
+            --text-dark: #2C3E50;
+            --text-medium: #5D6D7E;
+            --text-light: #95A5A6;
+            --bg-cream: #FAF8F5;
+            --bg-light: #FFFFFF;
+            --border-light: #E8E4DF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--bg-light);
+        }
+
+        /* ヘッダー・ヒーローセクション */
+        .hero {
+            background-color: var(--bg-cream);
+            padding: 4rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('hero_study.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        /* 画像の上に非常に薄いオーバーレイ */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(250, 248, 245, 0.15) 0%, rgba(250, 248, 245, 0.25) 100%);
+            z-index: 0;
+        }
+
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(30px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            font-family: 'Noto Serif JP', serif;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(107, 158, 120, 0.3);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease 0.6s both;
+            margin-top: 1rem;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(107, 158, 120, 0.4);
+        }
+
+        .hero-note {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* セクションタイトル */
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+        }
+
+        /* 問題提起セクション */
+        .problem {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9F6F2 100%);
+            position: relative;
+            border-top: 1px solid rgba(107, 158, 120, 0.1);
+        }
+
+        /* 動画紹介セクション */
+        .video-intro {
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .video-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle, rgba(107, 158, 120, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .video-description {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .video-wrapper {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 2px solid var(--border-light);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .video-caption {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .problem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle, rgba(232, 122, 93, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-cream);
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 5px solid #E87A5D;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-highlight {
+            background: linear-gradient(transparent 60%, rgba(232, 122, 93, 0.2) 60%);
+            font-weight: 600;
+            padding: 0 4px;
+        }
+
+        /* 解決方法セクション */
+        .solution {
+            background: linear-gradient(180deg, #F0F5F1 0%, #E8F0EA 100%);
+            position: relative;
+            border-top: 1px solid rgba(107, 158, 120, 0.15);
+        }
+
+        .solution::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle, rgba(107, 158, 120, 0.04) 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .consultation-image {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .consultation-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .solution-card p {
+            color: var(--text-medium);
+            line-height: 1.9;
+        }
+
+        /* 実績セクション */
+        .results {
+            background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EC 100%);
+            position: relative;
+            border-top: 1px solid rgba(232, 197, 166, 0.2);
+        }
+
+        .results::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle, rgba(232, 197, 166, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .results-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .results-visual {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .results-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .results-stat {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(107, 158, 120, 0.05) 0%, rgba(232, 197, 166, 0.08) 100%);
+            border-radius: 15px;
+        }
+
+        .results-stat-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .results-stat-label {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-description {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 2;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .results-highlight {
+            background: linear-gradient(transparent 60%, rgba(107, 158, 120, 0.2) 60%);
+            font-weight: 600;
+            padding: 0 4px;
+        }
+
+        /* CTAセクション */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .cta-section .section-title {
+            color: white;
+        }
+
+        .cta-section .section-title::after {
+            background: white;
+        }
+
+        .cta-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin: 2rem 0;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .cta-note {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* フッター */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-info p {
+            margin: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .results-stat-number {
+                font-size: 4rem;
+            }
+
+            .hero-content {
+                padding: 2rem;
+            }
+
+            .problem-content {
+                padding: 2rem;
+            }
+
+            .consultation-image,
+            .results-visual {
+                max-width: 100%;
+            }
+
+            .video-title {
+                font-size: 1.5rem;
+            }
+
+            .video-wrapper {
+                padding: 1rem;
+            }
+        }
+
+        /* スクロールアニメーション用 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">電子書籍出版・伴走サポート</div>
+            <h1>資格・学び・経験を、<br>人生の成果にする出版</h1>
+            <p class="hero-subtitle">話すことから始める、大人のための出版伴走サポート</p>
+            <a href="#cta" class="hero-cta">まずはLINEで相談してみる</a>
+            <p class="hero-note">※ 初回相談は無料です</p>
+        </div>
+    </section>
+
+    <!-- 動画紹介セクション -->
+    <section class="video-intro">
+        <div class="video-container">
+            <h2 class="video-title fade-in">代表・岸浩美の著書紹介</h2>
+            <p class="video-description fade-in">
+                あなたの経験を、誰かの道しるべに。<br>
+                電子書籍という形で、想いを未来へ届けませんか。
+            </p>
+            <div class="video-wrapper fade-in">
+                <video controls preload="metadata">
+                    <source src="どうする_send.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+                <p class="video-caption">岸浩美著「どうする?」 - 経験を形にする第一歩</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 問題提起セクション -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title fade-in">こんなお悩みはありませんか?</h2>
+            <p class="section-subtitle fade-in">電子書籍を書きたいと思っているあなたへ</p>
+            
+            <div class="problem-content fade-in">
+                <p>
+                    電子書籍を書きたいと思い、章立てまでは決まったものの、<span class="problem-highlight">そこから文章量が増えず、手が止まってしまう</span>方が多くいます。
+                </p>
+                <p>
+                    AIを使って構成を作ってみたものの、形にはなっているのに、どこかしっくりこない。<span class="problem-highlight">「これは本当に自分の言葉なのか」と違和感を抱え、書き進められなくなってしまう</span>ケースも少なくありません。
+                </p>
+                <p>
+                    一人で考え続けるほど、何を書けばよいのか分からなくなってしまう、そんな状態で止まってしまう方が多く見られます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決方法セクション -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title fade-in">私たちの解決方法</h2>
+            <p class="section-subtitle fade-in">話すことから始める、寄り添う伴走サポート</p>
+            
+            <div class="consultation-image fade-in">
+                <img src="consultation.png" alt="寄り添う相談風景">
+            </div>
+            
+            <div class="solution-cards">
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
+                            <circle cx="75" cy="75" r="35" fill="#6B9E78" opacity="0.8"/>
+                            <circle cx="125" cy="75" r="35" fill="#6B9E78" opacity="0.8"/>
+                            <path d="M 60 60 Q 55 50, 65 48 Q 75 47, 80 55" fill="none" stroke="#4A7C59" stroke-width="3"/>
+                            <path d="M 110 60 Q 105 50, 115 48 Q 125 47, 130 55" fill="none" stroke="#4A7C59" stroke-width="3"/>
+                            <ellipse cx="65" cy="55" rx="8" ry="12" fill="#2C3E50"/>
+                            <ellipse cx="115" cy="55" rx="8" ry="12" fill="#2C3E50"/>
+                            <path d="M 50 100 Q 60 90, 70 95 L 80 100" fill="none" stroke="#6B9E78" stroke-width="2.5"/>
+                            <path d="M 100 100 Q 110 90, 120 95 L 130 100" fill="none" stroke="#6B9E78" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>まずは話すことから</h3>
+                    <p>
+                        文章が進まないときは、無理に文字数を増やすのではなく、まずは声に出して話すことから始めます。その時の出来事、周囲の様子、感情、当時どのように考えていたのか、今振り返るとどんな意味があるのかを整理します。
+                    </p>
+                </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
+                            <circle cx="100" cy="75" r="50" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.3"/>
+                            <circle cx="100" cy="75" r="35" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.5"/>
+                            <circle cx="100" cy="75" r="20" fill="none" stroke="#6B9E78" stroke-width="8" opacity="0.7"/>
+                            <circle cx="100" cy="75" r="8" fill="#6B9E78"/>
+                            <path d="M 100 15 L 90 40 L 110 40 Z" fill="#4A7C59"/>
+                            <path d="M 100 20 L 100 70" stroke="#4A7C59" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <h3>書くポイントが見える</h3>
+                    <p>
+                        話すことで「どこを書けばいいのか」「どこを膨らませればいいのか」というポイントが見えてきます。経験や感情そのものは人にしか語れません。あなたの意図を言葉にしていきます。
+                    </p>
+                </div>
+                
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 200 150" style="width: 100%; height: auto;">
+                            <rect x="50" y="40" width="100" height="70" rx="10" fill="#6B9E78" opacity="0.8"/>
+                            <circle cx="80" cy="60" r="8" fill="white"/>
+                            <circle cx="120" cy="60" r="8" fill="white"/>
+                            <rect x="70" y="85" width="60" height="3" fill="white" opacity="0.6"/>
+                            <rect x="70" y="93" width="60" height="3" fill="white" opacity="0.6"/>
+                            <circle cx="100" cy="30" r="4" fill="#6B9E78"/>
+                            <line x1="100" y1="30" x2="100" y2="40" stroke="#6B9E78" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>AIは補助として活用</h3>
+                    <p>
+                        AIは構成や下書きの補助として活用します。「ここはこう書きたい」「この時、こう感じた」という意図を言葉にしたうえでAIに伝え直し、ご本人の経験が反映された文章に整えていきます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績セクション -->
+    <section class="results">
+        <div class="container">
+            <h2 class="section-title fade-in">現在の取り組み</h2>
+            <p class="section-subtitle fade-in">モニターの方々と進行中です</p>
+            
+            <div class="results-content">
+                <div class="results-visual fade-in">
+                    <img src="book_light.png" alt="本から溢れる光と言葉">
+                </div>
+
+                <div class="results-stat fade-in">
+                    <div class="results-stat-number">2名</div>
+                    <div class="results-stat-label">現在モニター伴走中</div>
+                </div>
+                
+                <div class="results-description fade-in">
+                    <p>
+                        現在、出版伴走サポートのモニターとして2名の方と進行中です。いずれも章立てが決まり、現在は原稿執筆段階にあり、いわゆる<span class="results-highlight">「産みの苦しみ」のフェーズを伴走</span>しています。
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <span class="results-highlight">声に出して話すことで気持ちが整理され、書くポイントが見えた</span>ことで、止まっていた筆が再び進み始める変化が起きています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">まずはLINEでご相談ください</h2>
+                <p class="section-subtitle">あなたの想いを、形にするお手伝いをします</p>
+                
+                <p class="cta-description">
+                    あなたの資格・学び・経験は、誰かの役に立つ価値ある財産です。<br>
+                    その想いを電子書籍という形にするお手伝いをさせてください。
+                </p>
+                
+                <a href="https://line.me/R/ti/p/@your-line-id" class="cta-button">📱 LINEで相談する</a>
+                
+                <p class="cta-note">※ お気軽にお問い合わせください。初回相談は無料です。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p><strong>運営:</strong> 一般社団法人 心支歩</p>
+                <p><strong>販売:</strong> ゴールサポート会議室</p>
+                <p><strong>代表:</strong> 岸 浩美</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 一般社団法人 心支歩 / ゴールサポート会議室. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクロールアニメーション -->
+    <script>
+        // 画像をBase64で読み込む
+        const images = {
+            'hero_study.png': 'hero_study.png',
+            'pattern_bg.png': 'pattern_bg.png',
+            'consultation.png': 'consultation.png',
+            'book_light.png': 'book_light.png'
+        };
+
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
