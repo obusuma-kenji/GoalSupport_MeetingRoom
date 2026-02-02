@@ -258,6 +258,28 @@
             position: relative;
         }
 
+        /* インフォグラフィックセクション */
+        .infographic {
+            background: linear-gradient(180deg, #F9F6F2 0%, #F0F5F1 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .infographic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .infographic-image {
+            width: 100%;
+            max-width: 1100px;
+            height: auto;
+            margin: 2rem auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
         .problem-content {
             max-width: 900px;
             margin: 0 auto;
@@ -714,6 +736,24 @@
     <!-- 動画紹介セクション -->
     <section class="video-intro">
         <div class="video-container">
+            <h2 class="video-title fade-in">想いから出版へ - 筆が止まる時</h2>
+            <p class="video-description fade-in">
+                書きたい想いはあるのに、筆が止まってしまう。<br>
+                その悩みを「話すこと」で解決する方法をご紹介します。
+            </p>
+            <div class="video-wrapper fade-in">
+                <video controls preload="metadata">
+                    <source src="想いから出版へ_筆が止まる時.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+                <p class="video-caption">執筆が止まる3つの悩みと、話すことから始める解決策</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 著書紹介セクション -->
+    <section class="video-intro" style="background: linear-gradient(180deg, #FAF8F5 0%, #FFFFFF 100%);">
+        <div class="video-container">
             <h2 class="video-title fade-in">代表・岸浩美の著書紹介</h2>
             <p class="video-description fade-in">
                 あなたの経験を、誰かの道しるべに。<br>
@@ -774,6 +814,18 @@
                         AIを使って形にはなったものの、どこかしっくりこない。その違和感を抱えたままでは、自信を持って世に出すことはできません。
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- インフォグラフィックセクション -->
+    <section class="infographic">
+        <div class="infographic-container">
+            <h2 class="section-title fade-in">執筆が止まってしまう「3つの悩み」と<br>話すことから始める「伴走メソッド」</h2>
+            <p class="section-subtitle fade-in">経験を形に。書けない悩みを「話す」で解決する</p>
+            
+            <div class="fade-in">
+                <img src="infographic.png" alt="執筆が止まる3つの悩みと解決策" class="infographic-image">
             </div>
         </div>
     </section>
@@ -958,21 +1010,30 @@
 
             <div class="profile-content fade-in">
                 <div class="profile-image">
-                    <div style="width: 300px; height: 400px; background: linear-gradient(135deg, var(--bg-cream) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; color: var(--text-medium);">
-                        [岸様のお写真]
-                    </div>
+                    <img src="hiromi_kishi.jpg" alt="代表 岸浩美" style="width: 100%; height: auto; border-radius: 15px;">
                 </div>
 
                 <div class="profile-text">
                     <h3>代表・岸 浩美(Hiromi Kishi)</h3>
-                    <h4>一般社団法人 心支歩 / ゴールサポート会議室</h4>
+                    <h4>電子書籍プロデューサー／福祉心理カウンセラー</h4>
+
+                    <p style="margin: 1.5rem 0; color: var(--text-medium); line-height: 1.9;">
+                        50歳から大学へ進学し、心理・福祉・保育を修了。<br>
+                        自身も電子書籍出版を実践してきました。
+                    </p>
 
                     <div class="profile-book">
                         <p><strong>著書:</strong> 『どうする?』</p>
                         <p style="margin-top: 1rem;">
-                            私自身も言葉を紡ぐ苦しみと喜びを知っています。あなたの経験を誰かの道しるべにするために、全力でサポートします。
+                            私自身も言葉を紡ぐ苦しみと喜びを知っています。<br>
+                            経験や知識を「本」という形に整理する伴走個別支援で、<br>
+                            あなたの想いを誰かの道しるべにするために、全力でサポートします。
                         </p>
                     </div>
+
+                    <p style="margin-top: 1.5rem; color: var(--text-dark); font-weight: 600;">
+                        一般社団法人 心支歩 / ゴールサポート会議室
+                    </p>
                 </div>
             </div>
         </div>
